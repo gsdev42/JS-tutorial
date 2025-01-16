@@ -34,8 +34,29 @@
 ## Practical DOM Examples
 
 ### Selecting and Modifying List Items
-1. Selecting the first item in a list and changing its background color:
+ Selecting the first item in a list and changing its background color:
    ```javascript
    const target = myul.querySelector("li")
-   target.style.backgroundColor = "green"
+   target.style.backgroundColor = "green" 
+   ```
 
+### querySelectorAll
+Selects all queries from the 
+
+```javascript
+document.querySelectorAll("li")
+````
+![alt text](screenshots/image8.png)
+- note that its type is nodelist its a colllection and therefore doesnt function like arrays
+
+```````javascript
+const tempLiList= document.querySelectorAll("li")
+```````
+
+
+![alt text](screenshots/image9.png)
+ - cant do it coz its not array
+
+```````javascript
+tempLiList[0].style.color= "green"
+```````

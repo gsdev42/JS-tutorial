@@ -1,16 +1,41 @@
-![alt text](screenshots/image-1.png)
 
+# Learning DOM
 
-difference btw all 3
-hidden text piece in html code using span
+### Difference Between All Three Methods
+1. **Using `innerHTML`**: Reveals or modifies the HTML content of an element.
+   - Example: Revealing hidden text in an HTML code using `<span>`.
+   - ![Example](screenshots/image.png)
+   - **Observation**: Hidden text becomes visible when `innerHTML` is used.
 
-![image](https://github.com/user-attachments/assets/5faec9f8-6c5e-49d1-95e4-8eeda58de9e5)
+2. **Using `querySelector`**: Fetches the first matching element.
+   - Example: In a document with two `<h2>` tags, only the first `<h2>` is selected.
+   - ![Example](screenshots/image-3.png)
 
-innerHTML reveals that
-![alt text](screenshots/image.png)
-hehe
+3. **Using `querySelector` with IDs**: Selects an element by its ID.
+   - Example:
+     ```javascript
+     document.querySelector("#myId")
+     ```
+   - ![Example](screenshots/image-4.png)
 
-querySelector gets the first result
-there are 2 h2 tags present in the file but the first one is fetched
+4. **Using `querySelector` with Classes**: Selects an element by its class name.
+   - Example:
+     ```javascript
+     document.querySelector(".myClass")
+     ```
+   - ![Example](screenshots/image5.png)
 
-![alt text](screenshots/image-3.png)
+### Fiddling with DOM
+- Experimenting further with DOM manipulations:
+  - ![Example](screenshots/image6.png)
+
+---
+
+## Practical DOM Examples
+
+### Selecting and Modifying List Items
+1. Selecting the first item in a list and changing its background color:
+   ```javascript
+   const target = myul.querySelector("li")
+   target.style.backgroundColor = "green"
+

@@ -9,3 +9,8 @@ hidden text piece in html code using span
 innerHTML reveals that
 ![alt text](image.png)
 hehe
+
+querySelector gets the first result
+there are 2 h2 tags present in the file but the first one is fetched
+
+![alt text](image-3.png)

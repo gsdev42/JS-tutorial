@@ -1,0 +1,31 @@
+
+<!-- HOW TO CREATE ELEMENT -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEHE BOI </title>
+</head>
+<body style="background-color: rgb(9, 9, 63) ; color: white;">
+    
+</body>
+<script>
+    const mydiv= document.createElement('div')
+    mydiv.style.backgroundColor="green"
+
+    
+    console.log(mydiv)
+    mydiv.classNAme="main"
+    mydiv.id=Math.round((Math.random()*10+1 ))
+    mydiv.setAttribute("title","generated title")
+
+    //said to be less efficient
+    // mydiv.innerText="22chai aur code22"
+
+    //method to add text
+    const addText= document.createTextNode("chai aur code")
+    mydiv.appendChild(addText)
+    document.body.appendChild(mydiv)
+</script>
+</html>

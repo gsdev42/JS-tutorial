@@ -60,3 +60,56 @@ const tempLiList= document.querySelectorAll("li")
 ```````javascript
 tempLiList[0].style.color= "green"
 ```````
+- can do in the above way
+![alt text](screenshots/image10.png)
+
+
+- another example: change color of 0th idx h1 tag element
+```````javascript
+const myH1= document.querySelectorAll("h1")
+```````
+```````javascript
+myH1[0].style.color= "green"
+```````
+
+![alt text](screenshots/image11.png)
+
+```````javascript
+tempLiList.forEach(function(l){
+    l.style.backgroundColor="green"
+})
+```````
+
+![alt text](screenshots/image12.png)
+
+```````javascript
+const myH1= document.querySelctorAll('h10')
+```````
+
+##### getElementByClassName()
+
+- we have the following html code
+```````html
+<ul>
+    <li class= "listItem" > one </li>
+    <li class= "listItem" > two </li>
+    <li class= "listItem" > three </li>
+</ul>
+```````
+```````javascript
+const tempClassList=document.getElementsByClassName('listItem')
+```````
+![alt text](screenshots/image13.png)
+- we need to convert the collection to array in order to use the mapping and access elements
+
+
+```````javascript
+const myConvertedArray=Array.from(tempClassList)
+```````
+
+```````javascript
+myConvertedArray.forEach( function(li){
+li.style.color="orange"
+})
+```````
+![alt text](screenshots/image14.png)

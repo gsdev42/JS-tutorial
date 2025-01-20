@@ -62,14 +62,28 @@ element traversal, and dynamic element creation.
 
 ### Code Example:
 ```javascript
+// Create a new div element
 const mydiv = document.createElement('div');
+
+// Set the background color of the div to green
 mydiv.style.backgroundColor = "green";
+
+// Assign a class name to the div
 mydiv.className = "main";
+
+// Assign a dynamic ID to the div
 mydiv.id = Math.round((Math.random() * 10) + 1);
+
+// Set a custom attribute 'title' to the div
 mydiv.setAttribute("title", "generated title");
 
+// Create a text node with the content "chai aur code"
 const addText = document.createTextNode("chai aur code");
+
+// Append the text node to the div
 mydiv.appendChild(addText);
+
+// Append the div to the body of the document
 document.body.appendChild(mydiv);
 ```
 

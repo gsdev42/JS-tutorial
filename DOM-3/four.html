@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 4 DOM</title>
+</head>
+<body style="background-color:midnightblue; color:white;">
+    <h1>DAY 4 DOM</h1>
+    <ul class="lang">
+        <li>JAVASCRIPT</li>
+    </ul>
+    
+</body>
+<script>
+    // function addLang(langName){
+    //     const myItem=document.createElement('li')
+    //     myItem.innerHTML=`${langName}`
+    //     document.querySelector('.lang').appendChild(myItem)
+    // }
+    // addLang("PYTHON")
+    // addLang("JAVA")
+    //problem: for running this function the tree has to traversed completely over and over again
+    
+    //do it in optimised way
+    function addLang(langName){
+        const myItem=document.createElement('li')
+        myItem.appendChild(document.createTextNode(langName)) // ye good practice hai
+        document.querySelector('.lang').appendChild(myItem)
+    }
+    addLang("GOLANG")
+
+    //----------------------------------------------\
+    // //EDIT ELEMENT
+    // const secondlang =document.querySelector("li:nth-child(2)")
+    // //below is not so good practice
+    // // secondlang.innerHTML="REACT" 
+    // const newItem= document.createElement('li')
+    // newItem.textContent="SCALA"
+    // //now replace the secondlang with newItem
+    // secondlang.replaceWith(newItem)
+    //--------------------
+    // //Edit element: using outer html
+    // const firstlang =document.querySelector("li:nth-child(1)")
+    // firstlang.outerHTML='<li>TYPESCRIPT</li>'
+//------------------------------------------------------
+    //REMOVE ELEMENT
+    const lastlang =document.querySelector("li:nth-child(2)")
+    lastlang.remove()
+
+    //OR
+    document.querySelector("li:nth-child(2)").remove()
+</script>
+</html>

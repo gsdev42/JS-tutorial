@@ -27,7 +27,7 @@ buttons.forEach(function (button) {
 ```````
 
 -----
-### Project 2:
+### Project 2:BMI calculator
 ##### Solution code:
 `script.js`
 
@@ -60,3 +60,22 @@ form.addEventListener('submit', function (e) {
 });
 
 ```````````
+-----------
+##### Project 3: Digital Clock
+`script.js`
+
+````````javascript
+const clock = document.querySelector('#clock');
+// const clock = document.getElementById('clock');
+
+setInterval(function () {
+    let date = new Date();
+    clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+````````
+- syntax of `setInterval`
+````````javascript
+setInterval(function () {
+  //code
+}, 1000);
+````````

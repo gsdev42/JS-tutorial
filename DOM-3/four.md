@@ -18,8 +18,8 @@
   secondLang.replaceWith(newItem);
  ```````
 
-- **Edit Using `outerHTML`:**
-  ```````javascript
+- **Edit Using outerHTML`:**
+ ```````javascript
   const firstLang = document.querySelector("li:nth-child(1)");
   firstLang.outerHTML = '<li>TYPESCRIPT</li>';
   ```````

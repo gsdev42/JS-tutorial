@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick= function(){
+    //     alert('You clicked on the owl image');
+    // }
+
+    //GYAN: onclick ki jagah eventlistener use karo
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert('You clicked on the owl image');
+    // });
+    
+    /*
+    document.getElementById('owl').addEventListener('click', function(e){}, false);
+    the 3rd param is false by default, if you want to capture the event 
+    in the capturing phase, then set it to true
+    */
+
+   //another way 
+   //attacheEvent()
+   //jQuery-on() Framework
+//INTERVIEW QUESTIONS
+    //type, timeStamp, target
+    //toElement, srcElement, currentTarget
+    //clientX, clientY, pageX, pageY
+    //altKey, ctrlKey, shiftKey,keyCode
+   //delving deeper :D
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(e)
+    // },false);
+    //event propagation
+//jb yha false likha h matlab event bubbling 
+//true: event capturing 
+//-----------------------------------------------------
+//demo of event bubbling
+//-----------------------
+    //when these 2 pieces of code run
+    //output when owl is clicked:
+    //owl clicked
+    //You clicked inside the ul tag
+    //inner element li which was owl was in output
+    //then the outer element ul was in output
+    //this is called bubbling "up"
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('You clicked inside the ul tag');
+    // },false);
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log('owl clicked');
+    // },false);
+//------------------------------------------------------------------------------
+// //demo of event capturing
+// //-----------------------
+//     //when these 2 pieces of code run
+//     //output when owl is clicked:
+//     //You clicked inside the ul tag
+//     //owl clicked
+//     //outer element ul was in output first
+//     //then the inner element li was in output
+    
+//     document.getElementById('images').addEventListener('click', function(e){
+//         console.log('You clicked inside the ul tag');
+//     },true);
+
+//     document.getElementById('owl').addEventListener('click', function(e){
+//         console.log('owl clicked');
+//     },true);
+// Stop propagation
+// //output when owl is clicked:
+// //owl clicked
+//     document.getElementById('owl').addEventListener('click', function(e){
+//         console.log('owl clicked');
+//         e.stopPropagation();
+//     },false);
+//     document.getElementById('images').addEventListener('click', function(e){
+//         console.log('You clicked inside the ul tag');
+//     },false);
+
+//------------------------------------------------------------
+//preventDefault
+//we have a link in the ul which is google.com
+//we want to prevent the link from opening the page of google
+
+// //output when google is clicked:
+// //You clicked on the link
+// document.getElementById('google').addEventListener('click', function(e){
+//     e.preventDefault();
+//     console.log('You clicked on the link');
+// },false);
+//------------------------------------------------------------
+// new topic: Removing elements on a click
+document.querySelector('#images').addEventListener('click', function(e){
+    // console.log(e);
+    // console.log(e.target); 
+    
+    // console.log(e.target.parentNode)  // gives li
+
+    // //interesting observation
+    // // if we click on the bullet point of the list item
+    // //all list items are removed
+
+    // let removeItem= e.target.parentNode;
+    // removeItem.remove();
+
+    // using a strict check to resolve the above issue  
+    console.log(e.target.tagName);
+    //click on bullet , output: UL
+    //click on image, output: IMG
+    if(e.target.tagName === 'IMG'){
+        let removeItem= e.target.parentNode;
+        removeItem.remove();
+    }
+    //we remove image by removing the list item
+//---------------------------
+    // //another way
+    // //image->li-> ul parent list
+    //li is child of ul 
+    // removeItem.parentNode.removeChild(removeItem);
+
+    
+},false);
+</script>
+</html>

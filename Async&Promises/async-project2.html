@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai Aur Code</h1>
+    <button id="start"> Start</button>
+    <button id="stop"> Stop</button> 
+</body>
+<script>
+    // // example of setInterval
+
+    // //no stopping condition so it will run forever
+    // const sayDate=function(){
+    //     console.log("gsdev42",Date.now())
+    // }
+    // setInterval(sayDate,3000)
+    //-------------------------
+    // const sayDate=function(str){
+    //     console.log(str,Date.now())
+    // }
+    // // setInterval(sayDate,3000,"gsdev42")
+    // const intervalID=setInterval(sayDate,3000,"gsdev42")
+    // clearInterval(intervalID)
+//-----------------------------------
+//task: start button clicked=>print the str
+//stop button clicked=>stop printing
+// const sayDate=function(str){
+//         console.log(str,Date.now())
+//     }
+// document.querySelector('#start').addEventListener('click',function(){
+//     setInterval(sayDate,3000,"gsdev42")
+//     })
+
+// const intervalID=setInterval(sayDate,3000,"gsdev42")
+// document.querySelector('#stop').addEventListener('click',function(){
+//     clearInterval(intervalID)
+//     console.log("stopped")
+// })
+
+
+/*
+//the issue in the previous code was that we were calling
+const sayDate = function (str) {
+    console.log(str, Date.now());
+};
+
+let intervalID; // Declare without initializing
+
+// Start interval when "Start" button is clicked
+document.querySelector('#start').addEventListener('click', function () {
+    if (!intervalID) {
+        intervalID = setInterval(sayDate, 3000, "gsdev42");
+    }
+});
+
+// Stop interval when "Stop" button is clicked
+
+document.querySelector('#stop').addEventListener('click', function () {
+    clearInterval(intervalID);
+    intervalID = null; // Reset to allow starting again
+    console.log("stopped");
+});
+*/
+
+</script>
+</html>
